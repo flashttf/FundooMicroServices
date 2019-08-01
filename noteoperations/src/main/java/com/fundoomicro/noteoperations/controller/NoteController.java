@@ -29,8 +29,8 @@ public class NoteController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto,@RequestHeader String token){
-		boolean isUser=restTemplate.getForObject("http://localhost:9095/usercontroller/usercheck"+token, Boolean.class);
-		
+		boolean isUser=restTemplate.getForObject("http://localhost:9095/usercontroller/usercheck/"+token, Boolean.class);
+		System.out.println("hhhh");
 		if(isUser) {
 			Response response=noteService.createNote(noteDto, token);
 			return new ResponseEntity<Response>(response,HttpStatus.OK);	

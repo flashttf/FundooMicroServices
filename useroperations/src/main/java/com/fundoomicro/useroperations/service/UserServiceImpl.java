@@ -106,7 +106,7 @@ public class UserServiceImpl implements IUserService{
 	}
 
 	@Override
-	public Boolean isUserPresent(String token) {
+	public boolean isUserPresent(String token) {
 		String userId=tokenGenerator.verifyToken(token);
 		Optional<User> isUser=userRepository.findByUserId(userId);
 		if(isUser.isPresent()) {

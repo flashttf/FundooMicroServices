@@ -12,5 +12,5 @@ public interface IUserService {
 	Response registerUser(UserDto userDto,HttpServletRequest requestUrl);
 	Response validateEmail(String token);
 	Response loginUser(LoginDto loginDto);
-	Boolean isUserPresent(String token);
+	boolean isUserPresent(String token);
 }

@@ -40,6 +40,7 @@ public class UserController {
 	@GetMapping("/usercheck/{token}")
 	public boolean isUserPresent(@PathVariable String token){
 		boolean isUser=userService.isUserPresent(token);
+		System.out.println("hello");
 		return isUser;
 	}
 }
